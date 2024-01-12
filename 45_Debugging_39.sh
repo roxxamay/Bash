@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 #
+set -x
 read -p "enter the file name : " FILEPATH 
 echo "================================================="
 if [[ -f $FILEPATH ]]
@@ -9,6 +10,6 @@ then
   realpath $FILEPATH
 else
   echo "file not exist "
-  exit 1
+  echo "creating File now"
+  touch $FILEPATH
 fi
-
